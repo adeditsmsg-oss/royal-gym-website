@@ -315,7 +315,7 @@ export default function Home() {
             className="text-6xl sm:text-[10rem] md:text-[13rem] font-black tracking-tighter leading-none select-none text-mask-bg uppercase font-display block -mt-4 sm:-mt-10"
             style={{ WebkitTextStroke: "1px rgba(255,255,255,0.05)" }}
           >
-            POWER
+            GYM
           </motion.h1>
 
           <motion.p 
