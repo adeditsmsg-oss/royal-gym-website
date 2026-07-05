@@ -277,6 +277,11 @@ export default function Home() {
 
       {/* Hero Section: Giant Textured Headings (CROSS BODY layout style) */}
       <section className="relative min-h-screen flex items-center justify-center pt-24 overflow-hidden bg-black">
+        {/* Real Gym Interior Background instead of blank dark page */}
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-25 filter grayscale contrast-125"
+          style={{ backgroundImage: `url('/assets/media__1783278960185.png')` }} 
+        />
         <div className="absolute inset-0 bg-radial-gradient from-transparent via-black/80 to-black z-10" />
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center flex flex-col items-center">
@@ -369,7 +374,7 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Promoted Courses / Programs Section (CROSS BODY layout style) */}
+      {/* Promoted Courses / Programs Section using Real Gym Photos */}
       <section id="programs" className="py-24 bg-black border-t border-zinc-900 relative z-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
@@ -394,11 +399,13 @@ export default function Home() {
               >
                 {/* Dark Overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent z-10 transition-opacity group-hover:opacity-90" />
+                
+                {/* REAL photos of gym members training instead of Unsplash */}
                 <img 
                   src={
-                    prog.id === 'strength-training' ? 'https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?q=80&w=800&auto=format&fit=crop' :
-                    prog.id === 'weight-loss' ? 'https://images.unsplash.com/photo-1518310383802-640c2de311b2?q=80&w=800&auto=format&fit=crop' :
-                    'https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?q=80&w=800&auto=format&fit=crop'
+                    prog.id === 'strength-training' ? '/assets/media__1783278947334.png' : // Preacher bicep curl
+                    prog.id === 'weight-loss' ? '/assets/media__1783278612631.png' : // Girl training chest fly
+                    '/assets/media__1783279035621.png' // Woman training core on green turf
                   }
                   alt={prog.name} 
                   className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 filter brightness-75 group-hover:brightness-90"
@@ -438,7 +445,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Slogans Inspiration Cards (CROSS BODY Branding quotes) */}
+      {/* Slogans Inspiration Cards using Real Branding Slogans from posters */}
       <section className="py-20 bg-black border-t border-zinc-900 relative z-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
@@ -499,7 +506,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Features & Large Image Cutout Section (CROSS BODY layout style) */}
+      {/* Features & Large Image Cutout Section (using real member photo cutout) */}
       <section id="features" className="py-24 bg-zinc-950 border-t border-zinc-900 relative z-20 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
@@ -562,17 +569,17 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Right: Large Portrait Cutout Image of muscular model prepping with chalk */}
+            {/* Right: Large Portrait Cutout Image of real member doing dumbbell press */}
             <div className="lg:col-span-5 relative flex justify-center">
               <div className="absolute -inset-4 bg-brand-orange/5 rounded-3xl blur-3xl -z-10" />
               <div className="relative rounded-2xl overflow-hidden border border-zinc-800 shadow-2xl h-[550px] w-full max-w-sm">
                 <img 
-                  src="https://images.unsplash.com/photo-1599058917212-d750089bc07e?q=80&w=800&auto=format&fit=crop" 
-                  alt="Muscular Athlete Cutout Vibe" 
-                  className="object-cover w-full h-full filter brightness-90 contrast-105"
+                  src="/assets/media__1783278721100.png" // Dumbbell overhead shoulder press guy
+                  alt="Royal Gym Member Shoulder Press" 
+                  className="object-cover w-full h-full filter brightness-95 contrast-105"
                 />
                 <div className="absolute bottom-6 left-6 right-6 bg-black/85 border border-zinc-850 p-5 rounded-lg">
-                  <span className="text-brand-orange font-black text-2xl font-display leading-none">NO EXCUSES</span>
+                  <span className="text-brand-orange font-black text-2xl font-display leading-none">REAL WORKOUTS</span>
                   <p className="text-zinc-400 text-xs mt-1 font-light uppercase tracking-wider">খড়গপুরের রয়্যাল ফিটনেস পাওয়ারহাউস।</p>
                 </div>
               </div>
@@ -612,7 +619,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Our Coaches / Trainers Section (CROSS BODY layout style) */}
+      {/* Our Coaches / Trainers Section using Real Trainer Selfies/Portraits */}
       <section id="coaches" className="py-24 bg-zinc-950 relative z-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
@@ -635,7 +642,7 @@ export default function Home() {
             <div className="bg-black border border-zinc-900 rounded-xl overflow-hidden grid md:grid-cols-12 items-stretch hover:border-brand-orange/20 transition-all duration-300">
               <div className="md:col-span-5 h-72 md:h-96 relative">
                 <img 
-                  src="https://images.unsplash.com/photo-1567013127542-490d757e51fc?q=80&w=800&auto=format&fit=crop" 
+                  src="/assets/media__1783278777056.png" // Arm flex mirror selfie
                   alt="Coach Vikram Sengupta" 
                   className="absolute inset-0 w-full h-full object-cover filter brightness-90 contrast-105"
                 />
@@ -672,7 +679,7 @@ export default function Home() {
               <div className="bg-black border border-zinc-900 rounded-xl overflow-hidden hover:border-brand-orange/20 transition-all duration-300">
                 <div className="h-64 relative">
                   <img 
-                    src="https://images.unsplash.com/photo-1548690312-e3b507d8c110?q=80&w=800&auto=format&fit=crop" 
+                    src="/assets/media__1783278661260.png" // Masked muscular guy photo
                     alt="Trainer Rahul Roy" 
                     className="absolute inset-0 w-full h-full object-cover filter brightness-90 contrast-105"
                   />
@@ -698,7 +705,7 @@ export default function Home() {
               <div className="bg-black border border-zinc-900 rounded-xl overflow-hidden hover:border-brand-orange/20 transition-all duration-300">
                 <div className="h-64 relative">
                   <img 
-                    src="https://images.unsplash.com/photo-1518310383802-640c2de311b2?q=80&w=800&auto=format&fit=crop" 
+                    src="/assets/media__1783278960185.png" // Gym interior photo representing gym floor
                     alt="Trainer Pooja Sen" 
                     className="absolute inset-0 w-full h-full object-cover filter brightness-90 contrast-105"
                   />
@@ -724,7 +731,7 @@ export default function Home() {
               <div className="bg-black border border-zinc-900 rounded-xl overflow-hidden hover:border-brand-orange/20 transition-all duration-300">
                 <div className="h-64 relative">
                   <img 
-                    src="https://images.unsplash.com/photo-1605296867304-46d5465a25f1?q=80&w=800&auto=format&fit=crop" 
+                    src="/assets/media__1783278630391.png" // Six pack mirror selfie guy
                     alt="Trainer Amit Das" 
                     className="absolute inset-0 w-full h-full object-cover filter brightness-90 contrast-105"
                   />
@@ -753,12 +760,12 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Testimonials ("What People Say") with Desaturated Background Image (CROSS BODY style) */}
+      {/* Testimonials ("What People Say") with Desaturated Background Image (using green turf) */}
       <section className="relative py-32 bg-black overflow-hidden flex items-center justify-center">
-        {/* Full width backdrop image */}
+        {/* Full width backdrop image using actual gym turf walkway */}
         <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-15 filter grayscale contrast-125"
-          style={{ backgroundImage: `url('https://images.unsplash.com/photo-1517838277536-f5f99be501cd?q=80&w=1200&auto=format&fit=crop')` }}
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20 filter grayscale contrast-125"
+          style={{ backgroundImage: `url('/assets/media__1783278990026.png')` }} 
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-black z-10" />
 
@@ -781,7 +788,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Recent Blog/News Section: Numbered Cards Layout (CROSS BODY style) */}
+      {/* Recent Blog/News Section: Numbered Cards Layout (using actual photo updates) */}
       <section id="about" className="py-24 bg-black border-t border-zinc-900 relative z-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
@@ -803,7 +810,7 @@ export default function Home() {
             <div className="bg-zinc-950 border border-zinc-900 rounded-lg overflow-hidden group hover:border-brand-orange/20 transition-all duration-300">
               <div className="h-52 overflow-hidden relative">
                 <img 
-                  src="https://images.unsplash.com/photo-1540497077202-7c8a3999166f?q=80&w=800&auto=format&fit=crop" 
+                  src="/assets/media__1783278760102.png" // Leg press plate loaded weights
                   alt="Strength Post" 
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 filter brightness-90"
                 />
@@ -825,7 +832,7 @@ export default function Home() {
             <div className="bg-zinc-950 border border-zinc-900 rounded-lg overflow-hidden group hover:border-brand-orange/20 transition-all duration-300">
               <div className="h-52 overflow-hidden relative">
                 <img 
-                  src="https://images.unsplash.com/photo-1518310383802-640c2de311b2?q=80&w=800&auto=format&fit=crop" 
+                  src="/assets/media__1783278974535.png" // Treadmills room view
                   alt="Fat Loss Post" 
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 filter brightness-90"
                 />
@@ -847,7 +854,7 @@ export default function Home() {
             <div className="bg-zinc-950 border border-zinc-900 rounded-lg overflow-hidden group hover:border-brand-orange/20 transition-all duration-300">
               <div className="h-52 overflow-hidden relative">
                 <img 
-                  src="https://images.unsplash.com/photo-1534367507873-d2d7e249a3fc?q=80&w=800&auto=format&fit=crop" 
+                  src="/assets/media__1783279035621.png" // Woman core workouts on turf
                   alt="Endurance Post" 
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 filter brightness-90"
                 />
@@ -1332,41 +1339,66 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Horizontal row of square images (Instagram style grid at the bottom) */}
+      {/* Horizontal row of square images (Gym Gallery of Official Posters & Moments) */}
       <section className="bg-black border-t border-zinc-900 overflow-hidden">
-        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4">
+        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8">
+          
           <div className="h-64 relative overflow-hidden group">
-            <img src="https://images.unsplash.com/photo-1540497077202-7c8a3999166f?q=80&w=600&auto=format&fit=crop" alt="Workout Moment 1" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 filter brightness-90" />
+            <img src="/assets/media__1783278791517.png" alt="Stay In Shadow Poster" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 filter brightness-90" />
             <div className="absolute inset-0 bg-brand-orange/10 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-              <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                <path fillRule="evenodd" d="M12.315 2c2.43 0 2.784.008 3.885.052 1.02.041 1.583.212 1.953.355a4.708 4.708 0 011.64 1.07 4.708 4.708 0 011.07 1.64c.143.37.314.933.355 1.953.044 1.102.052 1.455.052 3.885 0 2.43-.008 2.784-.052 3.885-.041 1.02-.212 1.583-.355 1.953a4.708 4.708 0 01-1.07 1.64 4.708 4.708 0 01-1.64 1.07c-.37.143-.933.314-1.953.355-1.102.044-1.455.052-3.885.052-2.43 0-2.784-.008-3.885-.052-1.02-.041-1.583-.212-1.953-.355a4.708 4.708 0 01-1.64-1.07 4.708 4.708 0 01-1.07-1.64c-.143-.37-.314-.933-.355-1.953C2.008 15.669 2 15.316 2 12.885c0-2.43.008-2.784.052-3.885.041-1.02.212-1.583.355-1.953a4.708 4.708 0 011.07-1.64 4.708 4.708 0 011.64-1.07c.37-.143.933-.314 1.953-.355C9.016 2.008 9.369 2 11.885 2h.43zM12 7.191a4.809 4.809 0 100 9.619 4.809 4.809 0 000-9.619zm0 7.956a3.148 3.148 0 110-6.296 3.148 3.148 0 010 6.296zm6.404-8.081a.977.977 0 100 1.955.977.977 0 000-1.955z" clipRule="evenodd" />
-              </svg>
+              <span className="text-white font-black text-xs uppercase tracking-widest">SHADOW POSTER</span>
             </div>
           </div>
+
           <div className="h-64 relative overflow-hidden group border-l border-zinc-900">
-            <img src="https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?q=80&w=600&auto=format&fit=crop" alt="Workout Moment 2" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 filter brightness-90" />
+            <img src="/assets/media__1783278809713.png" alt="Be Savage Poster" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 filter brightness-90" />
             <div className="absolute inset-0 bg-brand-orange/10 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-              <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                <path fillRule="evenodd" d="M12.315 2c2.43 0 2.784.008 3.885.052 1.02.041 1.583.212 1.953.355a4.708 4.708 0 011.64 1.07 4.708 4.708 0 011.07 1.64c.143.37.314.933.355 1.953.044 1.102.052 1.455.052 3.885 0 2.43-.008 2.784-.052 3.885-.041 1.02-.212 1.583-.355 1.953a4.708 4.708 0 01-1.07 1.64 4.708 4.708 0 01-1.64 1.07c-.37.143-.933.314-1.953.355-1.102.044-1.455.052-3.885.052-2.43 0-2.784-.008-3.885-.052-1.02-.041-1.583-.212-1.953-.355a4.708 4.708 0 01-1.64-1.07 4.708 4.708 0 01-1.07-1.64c-.143-.37-.314-.933-.355-1.953C2.008 15.669 2 15.316 2 12.885c0-2.43.008-2.784.052-3.885.041-1.02.212-1.583.355-1.953a4.708 4.708 0 011.07-1.64 4.708 4.708 0 011.64-1.07c.37-.143.933-.314 1.953-.355C9.016 2.008 9.369 2 11.885 2h.43zM12 7.191a4.809 4.809 0 100 9.619 4.809 4.809 0 000-9.619zm0 7.956a3.148 3.148 0 110-6.296 3.148 3.148 0 010 6.296zm6.404-8.081a.977.977 0 100 1.955.977.977 0 000-1.955z" clipRule="evenodd" />
-              </svg>
+              <span className="text-white font-black text-xs uppercase tracking-widest">SAVAGE POSTER</span>
             </div>
           </div>
+
           <div className="h-64 relative overflow-hidden group border-l border-zinc-900">
-            <img src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?q=80&w=600&auto=format&fit=crop" alt="Workout Moment 3" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 filter brightness-90" />
+            <img src="/assets/media__1783278827880.png" alt="Badass Poster" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 filter brightness-90" />
             <div className="absolute inset-0 bg-brand-orange/10 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-              <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                <path fillRule="evenodd" d="M12.315 2c2.43 0 2.784.008 3.885.052 1.02.041 1.583.212 1.953.355a4.708 4.708 0 011.64 1.07 4.708 4.708 0 011.07 1.64c.143.37.314.933.355 1.953.044 1.102.052 1.455.052 3.885 0 2.43-.008 2.784-.052 3.885-.041 1.02-.212 1.583-.355 1.953a4.708 4.708 0 01-1.07 1.64 4.708 4.708 0 01-1.64 1.07c-.37.143-.933.314-1.953.355-1.102.044-1.455.052-3.885.052-2.43 0-2.784-.008-3.885-.052-1.02-.041-1.583-.212-1.953-.355a4.708 4.708 0 01-1.64-1.07 4.708 4.708 0 01-1.07-1.64c-.143-.37-.314-.933-.355-1.953C2.008 15.669 2 15.316 2 12.885c0-2.43.008-2.784.052-3.885.041-1.02.212-1.583.355-1.953a4.708 4.708 0 011.07-1.64 4.708 4.708 0 011.64-1.07c.37-.143.933-.314 1.953-.355C9.016 2.008 9.369 2 11.885 2h.43zM12 7.191a4.809 4.809 0 100 9.619 4.809 4.809 0 000-9.619zm0 7.956a3.148 3.148 0 110-6.296 3.148 3.148 0 010 6.296zm6.404-8.081a.977.977 0 100 1.955.977.977 0 000-1.955z" clipRule="evenodd" />
-              </svg>
+              <span className="text-white font-black text-xs uppercase tracking-widest">BADASS POSTER</span>
             </div>
           </div>
+
           <div className="h-64 relative overflow-hidden group border-l border-zinc-900">
-            <img src="https://images.unsplash.com/photo-1534367507873-d2d7e249a3fc?q=80&w=600&auto=format&fit=crop" alt="Workout Moment 4" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 filter brightness-90" />
+            <img src="/assets/media__1783278849047.png" alt="Change Vibe Poster" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 filter brightness-90" />
             <div className="absolute inset-0 bg-brand-orange/10 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-              <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                <path fillRule="evenodd" d="M12.315 2c2.43 0 2.784.008 3.885.052 1.02.041 1.583.212 1.953.355a4.708 4.708 0 011.64 1.07 4.708 4.708 0 011.07 1.64c.143.37.314.933.355 1.953.044 1.102.052 1.455.052 3.885 0 2.43-.008 2.784-.052 3.885-.041 1.02-.212 1.583-.355 1.953a4.708 4.708 0 01-1.07 1.64 4.708 4.708 0 01-1.64 1.07c-.37.143-.933.314-1.953.355-1.102.044-1.455.052-3.885.052-2.43 0-2.784-.008-3.885-.052-1.02-.041-1.583-.212-1.953-.355a4.708 4.708 0 01-1.64-1.07 4.708 4.708 0 01-1.07-1.64c-.143-.37-.314-.933-.355-1.953C2.008 15.669 2 15.316 2 12.885c0-2.43.008-2.784.052-3.885.041-1.02.212-1.583.355-1.953a4.708 4.708 0 011.07-1.64 4.708 4.708 0 011.64-1.07c.37-.143.933-.314 1.953-.355C9.016 2.008 9.369 2 11.885 2h.43zM12 7.191a4.809 4.809 0 100 9.619 4.809 4.809 0 000-9.619zm0 7.956a3.148 3.148 0 110-6.296 3.148 3.148 0 010 6.296zm6.404-8.081a.977.977 0 100 1.955.977.977 0 000-1.955z" clipRule="evenodd" />
-              </svg>
+              <span className="text-white font-black text-xs uppercase tracking-widest">VIBE POSTER</span>
             </div>
           </div>
+
+          <div className="h-64 relative overflow-hidden group border-l border-zinc-900">
+            <img src="/assets/media__1783278863456.png" alt="Responsibility Poster" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 filter brightness-90" />
+            <div className="absolute inset-0 bg-brand-orange/10 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+              <span className="text-white font-black text-xs uppercase tracking-widest">FITNESS POSTER</span>
+            </div>
+          </div>
+
+          <div className="h-64 relative overflow-hidden group border-l border-zinc-900">
+            <img src="/assets/media__1783278890368.png" alt="Small Steps Poster" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 filter brightness-90" />
+            <div className="absolute inset-0 bg-brand-orange/10 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+              <span className="text-white font-black text-xs uppercase tracking-widest">RESULTS POSTER</span>
+            </div>
+          </div>
+
+          <div className="h-64 relative overflow-hidden group border-l border-zinc-900">
+            <img src="/assets/media__1783278907833.png" alt="Therapy Poster" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 filter brightness-90" />
+            <div className="absolute inset-0 bg-brand-orange/10 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+              <span className="text-white font-black text-xs uppercase tracking-widest">THERAPY POSTER</span>
+            </div>
+          </div>
+
+          <div className="h-64 relative overflow-hidden group border-l border-zinc-900">
+            <img src="/assets/media__1783278927265.png" alt="Sparkle Poster" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 filter brightness-90" />
+            <div className="absolute inset-0 bg-brand-orange/10 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+              <span className="text-white font-black text-xs uppercase tracking-widest">SPARKLE POSTER</span>
+            </div>
+          </div>
+
         </div>
       </section>
 
